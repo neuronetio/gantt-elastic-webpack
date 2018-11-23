@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import GanttElastic from 'gantt-elastic';
 
 // just helper to get current dates
@@ -73,7 +74,7 @@ const tasks = [
         fill: '#0077C0'
       }
     }
-  }, 
+  },
 ];
 
 const options = {
