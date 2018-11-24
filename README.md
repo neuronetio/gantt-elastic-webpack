@@ -15,3 +15,6 @@ This repo shows how to use gantt-elastic with webpack for standalone projects (w
 `App.vue` is your example Vue App where you can add some other components as well
 
 `app.js` is entry point for webpack and main js file
+
+#### uglifyjs
+if you are using uglifyjs in your project be sure to have es6 compatible version like [uglify-es](https://www.npmjs.com/package/uglify-es)
