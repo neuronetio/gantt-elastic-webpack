@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import GanttElastic from "gantt-elastic";
+import GanttElastic from "gantt-elastic/src/GanttElastic.vue";
 
 // just helper to get current dates
 function getDate(hours) {
