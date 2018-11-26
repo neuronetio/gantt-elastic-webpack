@@ -1,25 +1,25 @@
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
+const path = require( 'path' );
+const { VueLoaderPlugin } = require( 'vue-loader' );
 
-module.exports = [{
+module.exports = [ {
   mode: 'production',
   entry: './standalone.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve( __dirname, 'dist' ),
     filename: 'bundle.standalone.js'
   },
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     },
-    extensions: ['*', '.js', '.vue', '.json']
+    extensions: [ '*', '.js', '.vue', '.json' ]
   },
 },
 {
   mode: 'production',
   entry: './app.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve( __dirname, 'dist' ),
     filename: 'app.vue.js'
   },
   module: {
@@ -29,9 +29,9 @@ module.exports = [{
         use: 'vue-loader'
       }, {
         test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader']
+        use: [ 'vue-style-loader', 'css-loader' ]
       }
     ]
   },
-  plugins: [new VueLoaderPlugin()]
-}];
+  plugins: [ new VueLoaderPlugin() ]
+} ];

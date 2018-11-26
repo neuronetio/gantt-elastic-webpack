@@ -2,7 +2,7 @@ import Vue from 'vue';
 import GanttElastic from 'gantt-elastic';
 
 // just helper to get current dates
-function getDate(hours) {
+function getDate (hours) {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth() + 1;
@@ -30,14 +30,11 @@ const tasks = [
     progress: 50,
     type: 'milestone',
     style: {
-      fill: '#1EBC61',
-      stroke: '#0EAC51'
-    },
-    progressBarStyle: {
-      bar: {
-        fill: '#0EAC51'
+      base: {
+        fill: "#1EBC61",
+        stroke: "#0EAC51"
       }
-    }
+    },
   }, {
     id: 3,
     label: 'Courage is being scared to death, but saddling up anyway.',
@@ -66,14 +63,11 @@ const tasks = [
     progress: 10,
     type: 'milestone',
     style: {
-      fill: '#0287D0',
-      stroke: '#0077C0'
-    },
-    progressBarStyle: {
-      bar: {
-        fill: '#0077C0'
+      base: {
+        fill: "#0287D0",
+        stroke: "#0077C0"
       }
-    }
+    },
   },
 ];
 
@@ -81,14 +75,6 @@ const options = {
   title: {
     label: 'Your project title as html (link or whatever...)',
     html: false,
-    style: {
-      'font-size': '20px',
-      'vertical-align': 'middle',
-      'font-weight': '400',
-      'line-height': '35px',
-      'padding-left': '22px',
-      'letter-spacing': '1px'
-    }
   },
   taskList: {
     columns: [
@@ -124,12 +110,12 @@ const options = {
         label: '%',
         value: 'progress',
         width: 35,
-        styles: {
-          label: {
+        style: {
+          "task-list-header-label": {
             'text-align': 'center',
             'width': '100%'
           },
-          value: {
+          "task-list-item-value": {
             'text-align': 'center',
             'width': '100%'
           }
