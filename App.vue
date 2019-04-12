@@ -3,10 +3,12 @@
 </template>
 
 <script>
+import dayjs from "dayjs";
+import Vue from "vue";
 import GanttElastic from "gantt-elastic/src/GanttElastic.vue";
 
 // just helper to get current dates
-function getDate (hours) {
+function getDate(hours) {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth() + 1;
@@ -14,7 +16,7 @@ function getDate (hours) {
   const timeStamp = new Date(
     `${currentYear}-${currentMonth}-${currentDay} 00:00:00`
   ).getTime();
-  return new Date(timeStamp + hours * 60 * 60 * 1000);
+  return new Date(timeStamp + hours * 60 * 60 * 1000).getTime();
 }
 
 const tasks = [
@@ -43,7 +45,7 @@ const tasks = [
         fill: "#1EBC61",
         stroke: "#0EAC51"
       }
-    },
+    }
   },
   {
     id: 3,
@@ -83,14 +85,14 @@ const tasks = [
         fill: "#0287D0",
         stroke: "#0077C0"
       }
-    },
+    }
   }
 ];
 
 const options = {
   title: {
     label: "Your project title as html (link or whatever...)",
-    html: false,
+    html: false
   },
   taskList: {
     columns: [
@@ -117,7 +119,7 @@ const options = {
       {
         id: 3,
         label: "Start",
-        value: task => task.startDate.format("YYYY-MM-DD"),
+        value: task => dayjs(task.start).format("YYYY-MM-DD"),
         width: 78
       },
       {
@@ -133,19 +135,19 @@ const options = {
         width: 35,
         style: {
           "task-list-header-label": {
-            'text-align': 'center',
-            'width': '100%'
+            "text-align": "center",
+            width: "100%"
           },
           "task-list-item-value": {
-            'text-align': 'center',
-            'width': '100%'
+            "text-align": "center",
+            width: "100%"
           }
         }
       }
     ]
   },
   locale: {
-    code: "en",
+    name: "en",
     Now: "Now",
     "X-Scale": "Zoom-X",
     "Y-Scale": "Zoom-Y",
@@ -159,10 +161,10 @@ export default {
   components: {
     ganttElastic: GanttElastic
   },
-  data () {
+  data() {
     return {
-      tasks: tasks,
-      options: options
+      tasks,
+      options
     };
   }
 };
